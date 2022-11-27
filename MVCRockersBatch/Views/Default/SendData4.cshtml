@@ -1,0 +1,23 @@
+﻿@model List<MVCRockersBatch.Models.EmployeeModel>
+@{
+    ViewBag.Title = "SendData4";
+}
+
+<h2>SendData4</h2>
+
+<table border="1">
+    <tr border="1">
+        <th border="1">EmpId</th>
+        <th border="1">Name</th>
+        <th border="1">Salary</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr border="1">
+            <td border="1">@item.EmpId</td>
+            <td border="1">@item.EmpName</td>
+            <td border="1">@item.EmpSalary</td>
+        </tr>
+    }
+</table>
