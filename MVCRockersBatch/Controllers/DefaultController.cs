@@ -151,5 +151,16 @@ namespace MVCRockersBatch.Controllers
 
             return View(empdept);
         }
+
+        public ViewResult SampleData()
+        {
+
+            EmployeeModel emp = new EmployeeModel();
+            emp.EmpId = 1;
+            emp.EmpName = "Raj";
+            emp.EmpSalary = 30000;
+
+            return View(emp);
+        }
     }
 }

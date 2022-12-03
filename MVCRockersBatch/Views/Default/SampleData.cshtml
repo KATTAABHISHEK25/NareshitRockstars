@@ -1,0 +1,19 @@
+﻿@model MVCRockersBatch.Models.EmployeeModel
+@{
+    ViewBag.Title = "SampleData";
+}
+
+<h2>SampleData</h2>
+
+@{
+    var s = Html.Partial("_MyFirstPartialView", Model);
+if (false||true)
+            {
+                @s;
+            }
+}
+
+@{ 
+    Html.RenderPartial("_MyFirstPartialView",Model);
+}
+@*Partial view and RenderView*@
