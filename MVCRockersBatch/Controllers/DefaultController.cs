@@ -162,5 +162,42 @@ namespace MVCRockersBatch.Controllers
 
             return View(emp);
         }
+
+        public PartialViewResult SampleData2()
+        {
+            EmployeeModel emp = new EmployeeModel();
+            emp.EmpId = 1;
+            emp.EmpName = "Raj";
+            emp.EmpSalary = 30000;
+
+            return PartialView("_MyFirstPartialView",emp);
+        }
+
+        public JsonResult GetJsonData()
+        {
+            List<EmployeeModel> listEmp = new List<EmployeeModel>();
+
+            EmployeeModel emp = new EmployeeModel();
+            emp.EmpId = 1;
+            emp.EmpName = "Raj";
+            emp.EmpSalary = 30000;
+
+            EmployeeModel emp1 = new EmployeeModel();
+            emp1.EmpId = 2;
+            emp1.EmpName = "Rani";
+            emp1.EmpSalary = 31000;
+
+            EmployeeModel emp2 = new EmployeeModel();
+            emp2.EmpId = 3;
+            emp2.EmpName = "Raji";
+            emp2.EmpSalary = 32000;
+
+            listEmp.Add(emp);
+            listEmp.Add(emp1);
+            listEmp.Add(emp2);
+
+
+            return Json(listEmp);
+        }
     }
 }
