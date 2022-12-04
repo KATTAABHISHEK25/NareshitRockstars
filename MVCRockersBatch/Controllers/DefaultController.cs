@@ -199,10 +199,5 @@ namespace MVCRockersBatch.Controllers
             
             return Json(listEmp,JsonRequestBehavior.AllowGet);
         }
-        public void justfortest()
-        {
-
-        }
-        
     }
 }
