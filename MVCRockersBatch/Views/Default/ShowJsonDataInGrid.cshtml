@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "ShowJsonDataInGrid";
+}
+
+<h2>ShowJsonDataInGrid</h2>
+
+<table id="table1" class="table1class" border="1">
+    <tr border="1">
+        <th border="1">EmpId</th>
+        <th border="1">EmpName</th>
+        <th border="1">EmpSalary</th>
+    </tr>
+</table>
+
+
+<script src="~/Scripts/jquery-3.6.1.min.js"></script>
+<script>
+    $.ajax({
+        url: "https://localhost:44334/Default/GetJsonData",
+        dataType: "json",
+        type: "Get",
+        success: function (result) {
+            
+            $.each(result, function (i,key) {
+                $("#table1 tr:last").after("<tr><td>" + key.EmpId + "</td><td>" + key.EmpName + "</td><td>" + key.EmpSalary + "</td></tr>");
+            });
+        }
+    })
+</script>

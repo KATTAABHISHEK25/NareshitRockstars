@@ -199,5 +199,45 @@ namespace MVCRockersBatch.Controllers
             
             return Json(listEmp,JsonRequestBehavior.AllowGet);
         }
+
+        public ViewResult ShowJsonDataInGrid()
+        {
+            return View();
+        }
+
+        public FileResult getFile()
+        {
+            return File("~/Web.config", "text");
+        }
+
+        public FileResult getFile2(int? id)
+        {
+            return File("~/Web.config", "application/xml");
+        }
+
+        public FileResult getFile3()
+        {
+            return File("~/download.pdf", "Application/pdf");
+        }
+
+        public FileResult getFile4()
+        {
+            return File("~/images.jpg", "Image/jpg","EarthImage.jpg");
+        }
+
+        public RedirectResult GoToGooGle()
+        {
+            return Redirect("http://www.google.com");
+        }
+
+        public RedirectResult GoToGetFile2()
+        {
+            return Redirect("~/Default/GetFile2?id="+100);
+        }
+
+        public RedirectToRouteResult GotoGetFile3()
+        {
+            return RedirectToAction("GoToGetFile2", "Default", new { id = 123 });
+        }
     }
 }
