@@ -197,7 +197,7 @@ namespace MVCRockersBatch.Controllers
             listEmp.Add(emp2);
 
             
-            return Json(listEmp);
+            return Json(listEmp,JsonRequestBehavior.AllowGet);
         }
     }
 }
